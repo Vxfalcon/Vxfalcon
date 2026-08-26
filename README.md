@@ -15,7 +15,11 @@ I build server-side tooling for Minecraft: anti-cheat systems, custom plugins, a
 - Shipped with support for Minecraft 1.21.1–1.21.11, obfuscated for distribution
 - Discontinued after a security incident on my machine cost me access to the project
 
-**Plugins** *(private)* — a working collection of Minecraft server plugins and supporting dev tools.
+**MoneySMP** *(private)* — built as Truesight / Vx.Falcon — a complete custom SMP server build: economy, live-run events, a full RPG-style ability system, and a matching resource pack, all built and maintained together.
+- **Server framework** — player economy (balances, pay, SQLite-backed auction house, leaderboard), a team + tier system, and eight built-in event modes: Capture the Flag, King of the Hill, Control Points, Egg Hunt, Battle Royale, Natural Disasters, VIP Protection, and generic ranked events with payouts
+- **Ability system** — 11 mythology-themed classes (Poseidon, Berserker, Titan, Executioner, Tempest, Inferno, Phantom, Gaia, Chronos, Nyx, Aether), each with a distinct passive and a multi-stage ultimate (windup → payoff, with matching particle/sound feedback), a charge-based cooldown economy per ability, a paid random-reroll system, and an anti-kill-farm safeguard so charge-farming the same victim repeatedly doesn't pay out
+- **Custom items & resource pack** — a full custom item set (modern 1.21.4+ component-based item models, not legacy CustomModelData overrides) built for the server's team system, plus custom items woven through the plugins themselves (reroll costs, totem tasks, banned-item rules)
+- Death/respawn protection with combat tagging, so freshly-spawned players can't be farmed but raid mechanics still work for staff-judged exceptions
 
 ## Stack
 
@@ -24,4 +28,4 @@ I build server-side tooling for Minecraft: anti-cheat systems, custom plugins, a
 ![Paper/Spigot](https://img.shields.io/badge/Paper%2FSpigot-2C2D72?style=flat-square&logo=minecraft&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Electron](https://img.shields.io/badge/Electron-191970?style=flat-square&logo=electron&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
