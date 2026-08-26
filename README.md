@@ -27,7 +27,16 @@ I build server-side Minecraft systems end-to-end — anti-cheat, economy and eve
 - Death turns the player's head into a revival focus — it can be retrieved and placed inside a staff-defined altar zone (corner-marked bounding box + center block)
 - Placing it starts a timed ritual: the head floats and slowly rotates while players hold the zone, with progress broadcasts at intervals — leave the zone empty and the ritual cancels, dropping the head back out
 - ProtocolLib drives the floating/rotating head effect; a PlaceholderAPI integration surfaces lives as hearts in other plugins' scoreboards/tab lists
-- Also carries a small class-ability layer (Berserker, Executioner, Poseidon, Titan) — a separate experiment in per-player passive/ultimate abilities, independent of the MoneySMP recreation
+- Also carries a small class-ability layer (Berserker, Executioner, Poseidon, Titan) — an earlier, smaller take on the same class-ability idea, later fully realized in the standalone Abilities plugin below
+
+**Abilities** *(private)* — a standalone class/progression plugin, independent of the MoneySMP recreation: on first join, every player is randomly assigned one of 11 mythology-themed classes, each with its own passive and a multi-stage ultimate.
+- **11 classes**, each with a themed passive → ultimate pair: Poseidon (Tidal Grace → Tsunami), Berserker (Bloodlust → Rampage), Titan (Stoneskin → Titan's Wrath), Executioner (Marked for Death → Execution), Tempest (Windswept → Eye of the Storm), Inferno (Scorched Body → Inferno), Phantom (Fading Step → Spectral Form), Gaia (Overgrowth → Wrath of Gaia), Chronos (Rewind Thread → Time Reversal), Nyx (Nightwalker → Eternal Night), Aether (Celestial Ward → Ascension)
+- Passives are environment- and state-aware, not flat stat buffs — Poseidon speeds up near water, Berserker's Strength scales as health drops, Gaia only regenerates on natural terrain, Nyx gets bonus Speed/Regeneration specifically at night
+- Ultimates are multi-stage sequences (windup → payoff, sometimes a delayed finisher) with matching particle rings/spirals and sound cues rather than an instant stat burst, triggered via shift + swap-hands with `/ultimate` as a fallback
+- A charge-based resource system: kills grant charges (each ability costs 4–7 to activate its ultimate), with a 300-second anti-farm cooldown so repeatedly killing the same player for charges doesn't pay out
+- A paid, excludable reroll system (defaults to 3 diamonds) for players who want to change their randomly-assigned class
+- Action bar + scoreboard-sidebar HUD showing live ability/charge status, plus a full GUI for browsing what every ability's passive and ultimate actually do
+- Flat-file YAML persistence keyed by player UUID, with an in-memory cache flushed immediately so nothing is lost on a crash or restart without per-lookup disk I/O
 
 ## Stack
 
@@ -40,3 +49,4 @@ I build server-side Minecraft systems end-to-end — anti-cheat, economy and eve
 ![Electron](https://img.shields.io/badge/Electron-191970?style=flat-square&logo=electron&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-CB171E?style=flat-square&logo=yaml&logoColor=white)
