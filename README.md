@@ -39,6 +39,15 @@ I build server-side Minecraft systems end-to-end — anti-cheat, economy and eve
 - Action bar + scoreboard-sidebar HUD showing live ability/charge status, plus a full GUI for browsing what every ability's passive and ultimate actually do
 - Flat-file YAML persistence keyed by player UUID, with an in-memory cache flushed immediately so nothing is lost on a crash or restart without per-lookup disk I/O
 
+**BossEngine** *(in development)* — a self-contained custom creature/boss engine for Paper 1.21.11, built from scratch with no dependency on MythicMobs or Model Engine: rig a Blockbench model, wire up abilities and AI, fight it.
+- **Blockbench pipeline** — a `.bbmodel` importer bakes cuboids into vanilla resource-pack item models, converts every animation's keyframe tracks automatically, and rebuilds a deployable resource pack with a built-in HTTP host, no external tooling required
+- **Rendering** — display-entity bone rigs with real parent → child forward kinematics (a rotating limb carries its children with it), driven by a frame-accurate animation clock with timed event markers for hit-frame-synced combat
+- **Abilities** — data-driven YAML abilities across 4 hitbox shapes (sphere/box/line/cone), 5 movement types (dash, leap, teleport, retreat, none), homing projectiles, and potion/heal/ignite/launch effects, all timed off the animation clock, with ground telegraphs before the hit
+- **AI** — a composable condition system (distance, health%, line-of-sight, target fleeing/blocking/healing, phase, random chance, AND/OR nesting) gates a weighted-random ability picker, layered on aggressive/neutral/friendly personalities
+- **Bosses** — health-threshold phases that swap ability sets and speed, synced boss bars, lockable arenas with win/fail/exit handling, configurable loot tables, and a full Bukkit event API (spawn/death/phase-change/ability-start/ability-hit/target-change) for other plugins
+- **Pets** — friendly creatures can be player-owned: follow/stay toggled by right-click, automatic aggro in the owner's defense when they're attacked nearby
+- **In-game editors** — a model preview GUI plus full ability and boss/phase builders (hitboxes, conditions, movement, telegraphs, phases, ability toggles) with anvil-based text entry, no config file required
+
 ## Stack
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
