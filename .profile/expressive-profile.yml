@@ -1,0 +1,27 @@
+name: Expressive Profile
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - profile.json
+      - .profile/icons.json
+      - .github/workflows/expressive-profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: expressive-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: metawka/expressive-profile@0dacdd6b4cd8d649b71ace733afbfe1b92649955 # pinned upstream revision
+        with:
+          token: ${{ github.token }}
