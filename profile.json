@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "login": "Vxfalcon",
+  "seed": "#BFA875",
+  "seedFromAvatar": false,
+  "scheme": "expressive",
+  "motion": true,
+  "iconFill": true,
+  "order": [
+    "hero",
+    "buttons",
+    "about",
+    "stack",
+    "projects",
+    "stats",
+    "streak",
+    "socials"
+  ],
+  "hidden": [],
+  "hero": {
+    "greeting": "Hey, I’m",
+    "name": "TrueSight",
+    "subtitle": "Minecraft clients. Server systems. Tools with character.",
+    "typing": true,
+    "avatarShape": "cookie12",
+    "chips": [
+      {
+        "icon": "sports_esports",
+        "label": "Minecraft Java"
+      },
+      {
+        "icon": "desktop_windows",
+        "label": "Windows / .NET"
+      },
+      {
+        "icon": "code",
+        "label": "Vx.Falcon"
+      }
+    ]
+  },
+  "about": {
+    "title": "Built around the game",
+    "items": [
+      {
+        "icon": "auto_awesome",
+        "label": "Ghastly — a compact Windows Minecraft client with a Phantom Wisp identity."
+      },
+      {
+        "icon": "deployed_code",
+        "label": "Copper Client, custom server systems and the tools that connect them."
+      },
+      {
+        "icon": "palette",
+        "label": "Native interfaces, animated visuals and configurable gameplay systems."
+      },
+      {
+        "icon": "code",
+        "label": "MC Forge — a visual custom-item and ability builder for Paper."
+      }
+    ]
+  },
+  "stack": {
+    "title": "What I build with",
+    "groups": [
+      {
+        "title": "Clients & runtime",
+        "items": [
+          {
+            "icon": "brand:openjdk",
+            "label": "Java"
+          },
+          {
+            "icon": "brand:dotnet",
+            "label": "C# / WPF"
+          },
+          {
+            "icon": "brand:cplusplus",
+            "label": "C++"
+          }
+        ]
+      },
+      {
+        "title": "Tools & interfaces",
+        "items": [
+          {
+            "icon": "brand:electron",
+            "label": "Electron"
+          },
+          {
+            "icon": "brand:nodedotjs",
+            "label": "Node.js"
+          },
+          {
+            "icon": "brand:git",
+            "label": "Git"
+          },
+          {
+            "icon": "brand:postgresql",
+            "label": "PostgreSQL"
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "source": "manual",
+    "repos": [
+      "Vxfalcon.github.io",
+      "GymStim-Offical-App"
+    ],
+    "overrides": {
+      "Vxfalcon.github.io": {
+        "icon": "language",
+        "shape": "gem",
+        "text": "My portfolio: Ghastly, Copper Client, Obsidian Anticheat and custom Minecraft systems."
+      },
+      "GymStim-Offical-App": {
+        "icon": "headphones",
+        "shape": "sunny",
+        "text": "A desktop music app for organizing and enjoying personal audio collections."
+      }
+    },
+    "empty": "",
+    "fork": "Fork"
+  },
+  "stats": {
+    "title": "GitHub activity",
+    "stars": "Stars earned",
+    "contributions": "Contributions this year",
+    "repos": "Public repos",
+    "followers": "Followers",
+    "calendar": "Last 21 days",
+    "weekdays": "SMTWTFS",
+    "languages": "Languages across my repositories",
+    "showLanguages": true
+  },
+  "streak": {
+    "title": "Streak",
+    "current": "Current streak",
+    "longest": "Longest this year",
+    "days": "days"
+  },
+  "socials": {
+    "items": [
+      {
+        "icon": "brand:github",
+        "url": "https://github.com/Vxfalcon"
+      },
+      {
+        "icon": "brand:discord",
+        "url": "https://discord.gg/4sVPfjEsZ3"
+      }
+    ],
+    "variant": "chip",
+    "fill": "tonal",
+    "shape": "pill",
+    "card": false
+  },
+  "buttons": {
+    "card": true,
+    "items": [
+      {
+        "icon": "language",
+        "label": "Portfolio",
+        "url": "https://vxfalcon.github.io/",
+        "style": "filled"
+      },
+      {
+        "icon": "auto_awesome",
+        "label": "Meet Ghastly",
+        "url": "https://vxfalcon.github.io/#ghastly",
+        "style": "tonal"
+      },
+      {
+        "icon": "book_2",
+        "label": "Project notes",
+        "url": "https://github.com/Vxfalcon/Vxfalcon/blob/main/PROJECTS.md",
+        "style": "tonal"
+      }
+    ]
+  }
+}
